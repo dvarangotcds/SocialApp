@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 
+//To use Twitter Kit we need to import this
+#import <Fabric/Fabric.h>
+#import <TwitterKit/TwitterKit.h>
+
 @interface AppDelegate ()
 
 @end
@@ -17,6 +21,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    //To use TwitterKit we need to initialize Fabric with Twitter.
+    //If you also want to use Crashlytics or other Fabric frameworks just import and add to this array
+    [Fabric with:@[[Twitter class]]];
     return YES;
 }
 
