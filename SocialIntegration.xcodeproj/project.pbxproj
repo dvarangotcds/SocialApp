@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		099EF693452C6D589E0336D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DE73C9D3F927D01DE5669D /* libPods.a */; };
+		DCA4450C1BDFCC6B0000D65C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA4450B1BDFCC6B0000D65C /* main.m */; };
+		DCA4450F1BDFCC6B0000D65C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA4450E1BDFCC6B0000D65C /* AppDelegate.m */; };
+		DCA445121BDFCC6B0000D65C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA445111BDFCC6B0000D65C /* ViewController.m */; };
+		DCA445151BDFCC6B0000D65C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA445131BDFCC6B0000D65C /* Main.storyboard */; };
+		DCA445171BDFCC6B0000D65C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA445161BDFCC6B0000D65C /* Assets.xcassets */; };
+		DCA4451A1BDFCC6B0000D65C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA445181BDFCC6B0000D65C /* LaunchScreen.storyboard */; };
+		DCA445221BDFCDD50000D65C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA445211BDFCDD50000D65C /* Social.framework */; };
+		DCA445261BDFE9000000D65C /* TwitterSocialFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA445251BDFE9000000D65C /* TwitterSocialFViewController.m */; settings = {ASSET_TAGS = (); }; };
+		DCA4452A1BDFF8010000D65C /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA445281BDFF8010000D65C /* FriendTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		DCA4452B1BDFF8010000D65C /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA445291BDFF8010000D65C /* FriendTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		DCA445331BE164BE0000D65C /* FacebookSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA445321BE164BE0000D65C /* FacebookSocialViewController.m */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1C185D5739B9A2338575BEFA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		4C8A34EB6A6B8DCAECF31515 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D1DE73C9D3F927D01DE5669D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCA445071BDFCC6B0000D65C /* SocialIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCA4450B1BDFCC6B0000D65C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		DCA4450D1BDFCC6B0000D65C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		DCA4450E1BDFCC6B0000D65C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		DCA445101BDFCC6B0000D65C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		DCA445111BDFCC6B0000D65C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		DCA445141BDFCC6B0000D65C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DCA445161BDFCC6B0000D65C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DCA445191BDFCC6B0000D65C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DCA4451B1BDFCC6B0000D65C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCA445211BDFCDD50000D65C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		DCA445241BDFE9000000D65C /* TwitterSocialFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TwitterSocialFViewController.h; path = "Social Framework/TwitterSocialFViewController.h"; sourceTree = "<group>"; };
+		DCA445251BDFE9000000D65C /* TwitterSocialFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TwitterSocialFViewController.m; path = "Social Framework/TwitterSocialFViewController.m"; sourceTree = "<group>"; };
+		DCA445271BDFF8010000D65C /* FriendTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FriendTableViewCell.h; path = Cells/FriendTableViewCell.h; sourceTree = "<group>"; };
+		DCA445281BDFF8010000D65C /* FriendTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FriendTableViewCell.m; path = Cells/FriendTableViewCell.m; sourceTree = "<group>"; };
+		DCA445291BDFF8010000D65C /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FriendTableViewCell.xib; path = Cells/FriendTableViewCell.xib; sourceTree = "<group>"; };
+		DCA445311BE164BE0000D65C /* FacebookSocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookSocialViewController.h; sourceTree = "<group>"; };
+		DCA445321BE164BE0000D65C /* FacebookSocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookSocialViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DCA445041BDFCC6B0000D65C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCA445221BDFCDD50000D65C /* Social.framework in Frameworks */,
+				099EF693452C6D589E0336D0 /* libPods.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		47E3FB0C09E406CD94458FA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D1DE73C9D3F927D01DE5669D /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DCA444FE1BDFCC6B0000D65C = {
+			isa = PBXGroup;
+			children = (
+				DCA445211BDFCDD50000D65C /* Social.framework */,
+				DCA445091BDFCC6B0000D65C /* SocialIntegration */,
+				DCA445081BDFCC6B0000D65C /* Products */,
+				FEEF304E95A4F02C755AD6A1 /* Pods */,
+				47E3FB0C09E406CD94458FA2 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		DCA445081BDFCC6B0000D65C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DCA445071BDFCC6B0000D65C /* SocialIntegration.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DCA445091BDFCC6B0000D65C /* SocialIntegration */ = {
+			isa = PBXGroup;
+			children = (
+				DCA4452C1BDFF8070000D65C /* Cells */,
+				DCA445231BDFCE2F0000D65C /* Social Framework */,
+				DCA4450D1BDFCC6B0000D65C /* AppDelegate.h */,
+				DCA4450E1BDFCC6B0000D65C /* AppDelegate.m */,
+				DCA445101BDFCC6B0000D65C /* ViewController.h */,
+				DCA445111BDFCC6B0000D65C /* ViewController.m */,
+				DCA445131BDFCC6B0000D65C /* Main.storyboard */,
+				DCA445161BDFCC6B0000D65C /* Assets.xcassets */,
+				DCA445181BDFCC6B0000D65C /* LaunchScreen.storyboard */,
+				DCA4451B1BDFCC6B0000D65C /* Info.plist */,
+				DCA4450A1BDFCC6B0000D65C /* Supporting Files */,
+			);
+			path = SocialIntegration;
+			sourceTree = "<group>";
+		};
+		DCA4450A1BDFCC6B0000D65C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				DCA4450B1BDFCC6B0000D65C /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		DCA445231BDFCE2F0000D65C /* Social Framework */ = {
+			isa = PBXGroup;
+			children = (
+				DCA445241BDFE9000000D65C /* TwitterSocialFViewController.h */,
+				DCA445251BDFE9000000D65C /* TwitterSocialFViewController.m */,
+				DCA445311BE164BE0000D65C /* FacebookSocialViewController.h */,
+				DCA445321BE164BE0000D65C /* FacebookSocialViewController.m */,
+			);
+			name = "Social Framework";
+			sourceTree = "<group>";
+		};
+		DCA4452C1BDFF8070000D65C /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DCA445271BDFF8010000D65C /* FriendTableViewCell.h */,
+				DCA445281BDFF8010000D65C /* FriendTableViewCell.m */,
+				DCA445291BDFF8010000D65C /* FriendTableViewCell.xib */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		FEEF304E95A4F02C755AD6A1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1C185D5739B9A2338575BEFA /* Pods.debug.xcconfig */,
+				4C8A34EB6A6B8DCAECF31515 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DCA445061BDFCC6B0000D65C /* SocialIntegration */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCA4451E1BDFCC6B0000D65C /* Build configuration list for PBXNativeTarget "SocialIntegration" */;
+			buildPhases = (
+				45D6B4B7113EB110DBA3FFD2 /* Check Pods Manifest.lock */,
+				DCA445031BDFCC6B0000D65C /* Sources */,
+				DCA445041BDFCC6B0000D65C /* Frameworks */,
+				DCA445051BDFCC6B0000D65C /* Resources */,
+				752B33D37AC0E12F5FFB4E10 /* Copy Pods Resources */,
+				DCA445341BE259B60000D65C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SocialIntegration;
+			productName = SocialIntegration;
+			productReference = DCA445071BDFCC6B0000D65C /* SocialIntegration.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DCA444FF1BDFCC6B0000D65C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = "Diego Varangot";
+				TargetAttributes = {
+					DCA445061BDFCC6B0000D65C = {
+						CreatedOnToolsVersion = 7.0.1;
+					};
+				};
+			};
+			buildConfigurationList = DCA445021BDFCC6B0000D65C /* Build configuration list for PBXProject "SocialIntegration" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DCA444FE1BDFCC6B0000D65C;
+			productRefGroup = DCA445081BDFCC6B0000D65C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DCA445061BDFCC6B0000D65C /* SocialIntegration */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DCA445051BDFCC6B0000D65C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCA4451A1BDFCC6B0000D65C /* LaunchScreen.storyboard in Resources */,
+				DCA445171BDFCC6B0000D65C /* Assets.xcassets in Resources */,
+				DCA445151BDFCC6B0000D65C /* Main.storyboard in Resources */,
+				DCA4452B1BDFF8010000D65C /* FriendTableViewCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		45D6B4B7113EB110DBA3FFD2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		752B33D37AC0E12F5FFB4E10 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DCA445341BE259B60000D65C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}\"/Fabric/Fabric.framework/run 9b7881912a0f10d4ab7c97f6abc2fdefb86b4392 a003d6d7fbc396ec381b2de2b795abbc731ae9201523f3d75781cb7bce2f67ce";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DCA445031BDFCC6B0000D65C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCA445121BDFCC6B0000D65C /* ViewController.m in Sources */,
+				DCA4450F1BDFCC6B0000D65C /* AppDelegate.m in Sources */,
+				DCA4450C1BDFCC6B0000D65C /* main.m in Sources */,
+				DCA445331BE164BE0000D65C /* FacebookSocialViewController.m in Sources */,
+				DCA4452A1BDFF8010000D65C /* FriendTableViewCell.m in Sources */,
+				DCA445261BDFE9000000D65C /* TwitterSocialFViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		DCA445131BDFCC6B0000D65C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCA445141BDFCC6B0000D65C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DCA445181BDFCC6B0000D65C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DCA445191BDFCC6B0000D65C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DCA4451C1BDFCC6B0000D65C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		DCA4451D1BDFCC6B0000D65C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DCA4451F1BDFCC6B0000D65C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1C185D5739B9A2338575BEFA /* Pods.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SocialIntegration/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codigodelsur.SocialIntegration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DCA445201BDFCC6B0000D65C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4C8A34EB6A6B8DCAECF31515 /* Pods.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = SocialIntegration/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.codigodelsur.SocialIntegration;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DCA445021BDFCC6B0000D65C /* Build configuration list for PBXProject "SocialIntegration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCA4451C1BDFCC6B0000D65C /* Debug */,
+				DCA4451D1BDFCC6B0000D65C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DCA4451E1BDFCC6B0000D65C /* Build configuration list for PBXNativeTarget "SocialIntegration" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCA4451F1BDFCC6B0000D65C /* Debug */,
+				DCA445201BDFCC6B0000D65C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DCA444FF1BDFCC6B0000D65C /* Project object */;
+}
