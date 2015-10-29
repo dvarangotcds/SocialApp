@@ -75,8 +75,7 @@
         [accountsActionSheet addAction:cancel];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [wself showViewController:accountsActionSheet
-                               sender:nil];
+            [wself presentViewController:accountsActionSheet animated:YES completion:nil];
         });
         
     }];

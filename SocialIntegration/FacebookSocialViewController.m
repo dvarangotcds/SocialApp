@@ -42,7 +42,7 @@
     __weak FacebookSocialViewController *wself = self;
     
     [self requestFacebookPermissionsWithCompletionBlock:^(bool permissionGranted, NSError *error) {
-        UIAlertController *accountsActionSheet = [UIAlertController alertControllerWithTitle:@"Device TW accounts"
+        UIAlertController *accountsActionSheet = [UIAlertController alertControllerWithTitle:@"Device FB accounts"
                                                                                      message:nil
                                                                               preferredStyle:UIAlertControllerStyleActionSheet];
         for (ACAccount *account in [wself fbFriends]) {
@@ -65,8 +65,7 @@
         [accountsActionSheet addAction:cancel];
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [wself showViewController:accountsActionSheet
-                               sender:nil];
+            [wself presentViewController:accountsActionSheet animated:YES completion:nil];
         });
         
     }];
