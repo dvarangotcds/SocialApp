@@ -93,6 +93,18 @@
     }];
 }
 
+- (IBAction)composeTweet:(id)sender
+{
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        
+        SLComposeViewController *vc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+        [vc setInitialText:@"Some default text"];
+        
+        [self presentViewController:vc animated:YES completion:nil];
+        
+    } 
+}
+
 #pragma mark - UITableViewDataSource methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -200,5 +212,7 @@
                                             userInfo:nil]);
     }
 }
+
+
 
 @end

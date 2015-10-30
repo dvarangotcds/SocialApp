@@ -9,6 +9,7 @@
 #import "TwitterKitViewController.h"
 #import <TwitterKit/TwitterKit.h>
 #import "TwitterKitFriendsTableViewController.h"
+#import "TwitterTimelineViewController.h"
 
 @interface TwitterKitViewController ()
 
@@ -20,7 +21,9 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *loadTweetButton;
 @property (weak, nonatomic) IBOutlet UITextField *tweetIdTextField;
+@property (weak, nonatomic) IBOutlet UILabel *tweetLabel;
 @property (strong, nonatomic) TWTRTweetView *tweetView;
+
 
 @property (weak, nonatomic) IBOutlet UIButton *loadUserButton;
 @property (weak, nonatomic) IBOutlet UITextField *userIdTextField;
@@ -31,6 +34,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *twAccountUsername;
 @property (weak, nonatomic) IBOutlet UILabel *twAccountIdentifier;
 @property (weak, nonatomic) IBOutlet UILabel *twAccountLogged;
+
+@property (weak, nonatomic) IBOutlet UITextField *screenNameTextField;
+@property (weak, nonatomic) IBOutlet UIButton *viewTimelineButton;
 
 @end
 
@@ -48,17 +54,18 @@
 
 }
 
-# pragma mark - UI setup
+#pragma mark - UI setup
 
 - (void)setupTweetView
 {
     self.tweetView = [[TWTRTweetView alloc] initWithTweet:nil style:TWTRTweetViewStyleCompact];
     // Just setting this view at the bottom, using all the screen's width
-    self.tweetView.frame = CGRectMake(0,
-                                      self.view.frame.size.height - self.tweetView.frame.size.height,
-                                      self.view.frame.size.width,
-                                      self.tweetView.frame.size.height);
     self.tweetView.showActionButtons = YES;
+    self.tweetView.frame = CGRectMake(0,
+                                      self.view.frame.size.height - 200,
+                                      self.view.frame.size.width,
+                                      200);
+    
     self.tweetView.theme = TWTRTweetViewThemeLight;
     
     [self.view addSubview:self.tweetView];
@@ -183,7 +190,7 @@
  - User registered using phone number, so his email field is empty.
  - Application is not in the Twitter whitelist, or you are using old tokens. (TWTRAPIErrorDomain, TWTRAPIErrorCodeNotAuthorizedForEndpoint)
  
- This example will fail because this app is not whitelisted
+ This example will fail because this app is not whitelisted. To whitelist your application you need to complete this form: https://support.twitter.com/forms/platform
  */
 - (IBAction)getEmailAction:(id)sender
 {
@@ -212,6 +219,7 @@
     [client loadTweetWithID:self.tweetIdTextField.text completion:^(TWTRTweet *tweet, NSError *error) {
         NSLog(@"Tweet %@, Error: %@", tweet, error);
         if (tweet) {
+            wself.tweetLabel.text = tweet.text;
             [wself.tweetView configureWithTweet:tweet];            
         } else {
             NSLog(@"Failed to load tweet: %@", [error localizedDescription]);
@@ -282,7 +290,7 @@
 {
     TWTRAPIClient *client = [[TWTRAPIClient alloc] init];
     NSString *statusesShowEndpoint = @"https://api.twitter.com/1.1/friends/list.json";
-    NSDictionary *params = @{@"id" : [[[[Twitter sharedInstance] sessionStore] session] userID]};
+    NSDictionary *params = @{@"id" : self.userIdTextField.text ? self.userIdTextField.text : @"20"};
     NSError *clientError;
     
     NSURLRequest *request = [client URLRequestWithMethod:@"GET" URL:statusesShowEndpoint parameters:params error:&clientError];
@@ -296,6 +304,7 @@
                 NSArray *friends = json[@"users"];
                 TwitterKitFriendsTableViewController *friendsViewController = [[TwitterKitFriendsTableViewController alloc] initWithFriends:friends];
                 [self.navigationController pushViewController:friendsViewController animated:YES];
+
             } else {
                 NSLog(@"Error: %@", connectionError);
             }
@@ -303,6 +312,14 @@
     }
     else {
         NSLog(@"Error: %@", clientError);
+    }
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"viewTimeline"]) {
+        TwitterTimelineViewController *vc = [segue destinationViewController];
+        [vc setScreenName:self.screenNameTextField.text];
     }
 }
 

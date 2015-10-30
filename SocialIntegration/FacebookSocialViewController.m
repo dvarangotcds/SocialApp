@@ -83,6 +83,18 @@
     }];
 }
 
+- (IBAction)postToFacebook:(id)sender
+{
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        
+        SLComposeViewController *vc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [vc setInitialText:@"Some default text"];
+        
+        [self presentViewController:vc animated:YES completion:nil];
+        
+    }
+}
+
 #pragma mark - UITableViewDataSource methods
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
