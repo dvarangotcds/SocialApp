@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		099EF693452C6D589E0336D0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D1DE73C9D3F927D01DE5669D /* libPods.a */; };
-		AF2A93E81BE3FFA800DA3810 /* TwitterTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2A93E71BE3FFA800DA3810 /* TwitterTimelineViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AF2A93E81BE3FFA800DA3810 /* TKTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF2A93E71BE3FFA800DA3810 /* TKTimelineViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AF9BF56B1BE267870069A62E /* TwitterKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9BF56A1BE267870069A62E /* TwitterKitViewController.m */; settings = {ASSET_TAGS = (); }; };
 		AF9BF56D1BE270D50069A62E /* TwitterKitResources.bundle in Resources */ = {isa = PBXBuildFile; fileRef = AF9BF56C1BE270D50069A62E /* TwitterKitResources.bundle */; settings = {ASSET_TAGS = (); }; };
-		AF9BF5701BE2A06C0069A62E /* TwitterKitFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9BF56F1BE2A06C0069A62E /* TwitterKitFriendsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AF9BF5701BE2A06C0069A62E /* TKFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AF9BF56F1BE2A06C0069A62E /* TKFriendsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AFCAAAB31BE7A573002E9547 /* TKTweetsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCAAAB21BE7A573002E9547 /* TKTweetsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		AFCAAAB91BE7A795002E9547 /* TKUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCAAAB81BE7A795002E9547 /* TKUsersViewController.m */; settings = {ASSET_TAGS = (); }; };
 		DCA4450C1BDFCC6B0000D65C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA4450B1BDFCC6B0000D65C /* main.m */; };
 		DCA4450F1BDFCC6B0000D65C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA4450E1BDFCC6B0000D65C /* AppDelegate.m */; };
 		DCA445121BDFCC6B0000D65C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA445111BDFCC6B0000D65C /* ViewController.m */; };
@@ -28,13 +30,17 @@
 /* Begin PBXFileReference section */
 		1C185D5739B9A2338575BEFA /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		4C8A34EB6A6B8DCAECF31515 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		AF2A93E61BE3FFA800DA3810 /* TwitterTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterTimelineViewController.h; sourceTree = "<group>"; };
-		AF2A93E71BE3FFA800DA3810 /* TwitterTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTimelineViewController.m; sourceTree = "<group>"; };
+		AF2A93E61BE3FFA800DA3810 /* TKTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTimelineViewController.h; sourceTree = "<group>"; };
+		AF2A93E71BE3FFA800DA3810 /* TKTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTimelineViewController.m; sourceTree = "<group>"; };
 		AF9BF5691BE267870069A62E /* TwitterKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterKitViewController.h; sourceTree = "<group>"; };
 		AF9BF56A1BE267870069A62E /* TwitterKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterKitViewController.m; sourceTree = "<group>"; };
 		AF9BF56C1BE270D50069A62E /* TwitterKitResources.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = TwitterKitResources.bundle; path = Pods/TwitterKit/TwitterKit.framework/Versions/A/Resources/TwitterKitResources.bundle; sourceTree = "<group>"; };
-		AF9BF56E1BE2A06C0069A62E /* TwitterKitFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterKitFriendsTableViewController.h; sourceTree = "<group>"; };
-		AF9BF56F1BE2A06C0069A62E /* TwitterKitFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterKitFriendsTableViewController.m; sourceTree = "<group>"; };
+		AF9BF56E1BE2A06C0069A62E /* TKFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKFriendsTableViewController.h; sourceTree = "<group>"; };
+		AF9BF56F1BE2A06C0069A62E /* TKFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKFriendsTableViewController.m; sourceTree = "<group>"; };
+		AFCAAAB11BE7A573002E9547 /* TKTweetsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKTweetsViewController.h; sourceTree = "<group>"; };
+		AFCAAAB21BE7A573002E9547 /* TKTweetsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKTweetsViewController.m; sourceTree = "<group>"; };
+		AFCAAAB71BE7A795002E9547 /* TKUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKUsersViewController.h; sourceTree = "<group>"; };
+		AFCAAAB81BE7A795002E9547 /* TKUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKUsersViewController.m; sourceTree = "<group>"; };
 		D1DE73C9D3F927D01DE5669D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA445071BDFCC6B0000D65C /* SocialIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA4450B1BDFCC6B0000D65C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,10 +88,14 @@
 			children = (
 				AF9BF5691BE267870069A62E /* TwitterKitViewController.h */,
 				AF9BF56A1BE267870069A62E /* TwitterKitViewController.m */,
-				AF9BF56E1BE2A06C0069A62E /* TwitterKitFriendsTableViewController.h */,
-				AF9BF56F1BE2A06C0069A62E /* TwitterKitFriendsTableViewController.m */,
-				AF2A93E61BE3FFA800DA3810 /* TwitterTimelineViewController.h */,
-				AF2A93E71BE3FFA800DA3810 /* TwitterTimelineViewController.m */,
+				AF9BF56E1BE2A06C0069A62E /* TKFriendsTableViewController.h */,
+				AF9BF56F1BE2A06C0069A62E /* TKFriendsTableViewController.m */,
+				AF2A93E61BE3FFA800DA3810 /* TKTimelineViewController.h */,
+				AF2A93E71BE3FFA800DA3810 /* TKTimelineViewController.m */,
+				AFCAAAB11BE7A573002E9547 /* TKTweetsViewController.h */,
+				AFCAAAB21BE7A573002E9547 /* TKTweetsViewController.m */,
+				AFCAAAB71BE7A795002E9547 /* TKUsersViewController.h */,
+				AFCAAAB81BE7A795002E9547 /* TKUsersViewController.m */,
 			);
 			name = "Twitter Kit";
 			sourceTree = "<group>";
@@ -288,14 +298,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF2A93E81BE3FFA800DA3810 /* TwitterTimelineViewController.m in Sources */,
+				AF2A93E81BE3FFA800DA3810 /* TKTimelineViewController.m in Sources */,
 				DCA445121BDFCC6B0000D65C /* ViewController.m in Sources */,
 				DCA4450F1BDFCC6B0000D65C /* AppDelegate.m in Sources */,
+				AFCAAAB91BE7A795002E9547 /* TKUsersViewController.m in Sources */,
 				DCA4450C1BDFCC6B0000D65C /* main.m in Sources */,
 				AF9BF56B1BE267870069A62E /* TwitterKitViewController.m in Sources */,
 				DCA445331BE164BE0000D65C /* FacebookSocialViewController.m in Sources */,
 				DCA4452A1BDFF8010000D65C /* FriendTableViewCell.m in Sources */,
-				AF9BF5701BE2A06C0069A62E /* TwitterKitFriendsTableViewController.m in Sources */,
+				AF9BF5701BE2A06C0069A62E /* TKFriendsTableViewController.m in Sources */,
+				AFCAAAB31BE7A573002E9547 /* TKTweetsViewController.m in Sources */,
 				DCA445261BDFE9000000D65C /* TwitterSocialFViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

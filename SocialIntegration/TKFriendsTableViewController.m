@@ -1,23 +1,23 @@
 //
-//  TwitterKitFriendsTableViewController.m
+//  TKFriendsTableViewController.m
 //  SocialIntegration
 //
 //  Created by Santiago Rama on 10/29/15.
 //  Copyright © 2015 Diego Varangot. All rights reserved.
 //
 
-#import "TwitterKitFriendsTableViewController.h"
+#import "TKFriendsTableViewController.h"
 #import "FriendTableViewCell.h"
 
-@interface TwitterKitFriendsTableViewController ()
+@interface TKFriendsTableViewController ()
 
 @property (nonatomic, strong) NSMutableArray *twFriends;
 
 @end
 
-@implementation TwitterKitFriendsTableViewController
+@implementation TKFriendsTableViewController
 
-- (TwitterKitFriendsTableViewController *)initWithFriends:(NSArray *)friends
+- (TKFriendsTableViewController *)initWithFriends:(NSArray *)friends
 {
     self = [super init];
     
@@ -27,7 +27,8 @@
     
     return self;
 }
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     [self.tableView registerNib:[UINib nibWithNibName:@"FriendTableViewCell"
                                                       bundle:nil]
@@ -37,11 +38,13 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
     if (section == 0) {
         return self.twFriends.count;
     }
@@ -49,7 +52,8 @@
     return 0;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     FriendTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"friendCell"];
     
     NSDictionary *friend = (NSDictionary *)[self.twFriends objectAtIndex:indexPath.row];
