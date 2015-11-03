@@ -946,8 +946,8 @@
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="dataSource" destination="EQC-Z6-pK8" id="ir6-bE-ZVS"/>
-                                    <outlet property="delegate" destination="EQC-Z6-pK8" id="6Jz-65-kwA"/>
+                                    <outlet property="dataSource" destination="6yS-1w-VFj" id="FZW-a7-XnU"/>
+                                    <outlet property="delegate" destination="6yS-1w-VFj" id="32v-jT-WA4"/>
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BXb-70-xVB">

@@ -15,7 +15,7 @@
 #import <Social/SLRequest.h>
 #import "FriendTableViewCell.h"
 
-@interface FacebookSocialViewController ()
+@interface FacebookSocialViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) ACAccount *selectedAccount;
 @property (weak, nonatomic) IBOutlet UILabel *fbAccountFullName;
@@ -31,8 +31,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     
+    self.fbFriends = [[NSMutableArray alloc] init];
+    [self.friendsTableView registerNib:[UINib nibWithNibName:@"FriendTableViewCell"
+                                                      bundle:nil]
+                forCellReuseIdentifier:@"friendCell"];
+    
+}
+
+- (void)setSelectedAccount:(ACAccount *)selectedAccount
+{
+    _selectedAccount = selectedAccount;
+    self.fbAccountFullName.text = selectedAccount.userFullName;
+    self.fbAccountUsername.text = selectedAccount.username;
+    self.fbAccountIdentifier.text = selectedAccount.identifier;
 }
 
 #pragma mark - IBAction methods
@@ -42,31 +54,10 @@
     __weak FacebookSocialViewController *wself = self;
     
     [self requestFacebookPermissionsWithCompletionBlock:^(bool permissionGranted, NSError *error) {
-        UIAlertController *accountsActionSheet = [UIAlertController alertControllerWithTitle:@"Device FB accounts"
-                                                                                     message:nil
-                                                                              preferredStyle:UIAlertControllerStyleActionSheet];
-        for (ACAccount *account in [wself fbFriends]) {
-            UIAlertAction *accountAction = [UIAlertAction actionWithTitle:account.username
-                                                                    style:UIAlertActionStyleDefault
-                                                                  handler:^(UIAlertAction * _Nonnull action) {
-                                                                      wself.selectedAccount = account;
-                                                                      [wself.fbFriends removeAllObjects];
-                                                                  }];
-            [accountsActionSheet addAction:accountAction];
-        }
-        
-        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"Cancel"
-                                                         style:UIAlertActionStyleCancel
-                                                       handler:^(UIAlertAction *action) {
-                                                           [accountsActionSheet dismissViewControllerAnimated:YES
-                                                                                                   completion:nil];
-                                                       }];
-        
-        [accountsActionSheet addAction:cancel];
-        
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [wself presentViewController:accountsActionSheet animated:YES completion:nil];
-        });
+       dispatch_async(dispatch_get_main_queue(), ^{
+           wself.selectedAccount = [wself facebookLoggedAccount];
+           [wself.fbFriends removeAllObjects];
+       });
         
     }];
 }
@@ -109,7 +100,7 @@
     NSDictionary *friend = (NSDictionary *)[self.fbFriends objectAtIndex:indexPath.row];
     [cell setImageWithURL:[NSURL URLWithString:friend[@"picture"]]];
     cell.name.text = friend[@"name"];
-    cell.socialIdentifier.text = [friend[@"id"] stringValue];
+    cell.socialIdentifier.text = friend[@"id"];
     
     return cell;
 }
@@ -136,7 +127,7 @@
     ACAccountType *accountTypeFacebook = [accountStore accountTypeWithAccountTypeIdentifier:
                                           ACAccountTypeIdentifierFacebook];
     
-    NSDictionary *options = [[NSDictionary alloc] initWithObjectsAndKeys:@"778491468881760", (NSString *)ACFacebookAppIdKey, [NSArray arrayWithObjects:@"email",nil], (NSString *)ACFacebookPermissionsKey, ACFacebookAudienceEveryone, (NSString *)ACFacebookAudienceKey, nil];
+    NSDictionary *options = [[NSDictionary alloc] initWithObjectsAndKeys:@"156023071416050", (NSString *)ACFacebookAppIdKey, [NSArray arrayWithObjects:@"email", @"user_friends", nil], (NSString *)ACFacebookPermissionsKey, ACFacebookAudienceEveryone, (NSString *)ACFacebookAudienceKey, nil];
     
     [accountStore requestAccessToAccountsWithType:accountTypeFacebook
                                           options:options
@@ -152,7 +143,7 @@
     ACAccountType *accountTypeFacebook = [accountStore accountTypeWithAccountTypeIdentifier:
                                           ACAccountTypeIdentifierFacebook];
     
-    NSDictionary *options = [[NSDictionary alloc] initWithObjectsAndKeys:@"778491468881760", (NSString *)ACFacebookAppIdKey, [NSArray arrayWithObjects:@"publish_actions",nil], (NSString *)ACFacebookPermissionsKey, ACFacebookAudienceEveryone, (NSString *)ACFacebookAudienceKey, nil];
+    NSDictionary *options = [[NSDictionary alloc] initWithObjectsAndKeys:@"156023071416050", (NSString *)ACFacebookAppIdKey, [NSArray arrayWithObjects:@"publish_actions",nil], (NSString *)ACFacebookPermissionsKey, ACFacebookAudienceEveryone, (NSString *)ACFacebookAudienceKey, nil];
     
     [accountStore requestAccessToAccountsWithType:accountTypeFacebook
                                           options:options
@@ -203,6 +194,8 @@
                  }
              }
              
+             
+             //We sort them by name (A-Z order)
              NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"name"
                                                                             ascending:YES];
              [fbFriendsInfoArray sortUsingDescriptors:@[sortDescriptor]];
