@@ -30,7 +30,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="EQC-Z6-pK8" kind="show" id="ZdI-lS-y9y"/>
+                                    <segue destination="EQC-Z6-pK8" kind="show" id="NLM-N3-9sN"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HbI-PY-WvK">
@@ -1044,7 +1044,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1Ff-n6-0JN"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" contentMode="scaleToFill" id="Xkc-X2-0uy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Let's Test Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IDt-2x-Pob">
@@ -1076,7 +1076,7 @@
                         <viewControllerLayoutGuide type="bottom" id="PI2-D3-WGl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="B2u-wN-oof">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C2g-7E-RcW">
@@ -1154,7 +1154,7 @@
                         <viewControllerLayoutGuide type="bottom" id="fEV-kD-sgg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DhU-SU-AvJ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Yp6-zh-yUS">
@@ -1205,7 +1205,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZJB-oE-sEb"/>
-        <segue reference="6Fn-Yd-dSO"/>
+        <segue reference="68h-ka-Rly"/>
+        <segue reference="zMh-fX-00f"/>
     </inferredMetricsTieBreakers>
 </document>

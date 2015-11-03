@@ -138,13 +138,13 @@
 				DCA445231BDFCE2F0000D65C /* Social Framework */,
 				DCA4450D1BDFCC6B0000D65C /* AppDelegate.h */,
 				DCA4450E1BDFCC6B0000D65C /* AppDelegate.m */,
+				E4E0499A1BE7DF4000D52655 /* ChooseViewController.h */,
+				E4E0499B1BE7DF4000D52655 /* ChooseViewController.m */,
 				DCA445131BDFCC6B0000D65C /* Main.storyboard */,
 				DCA445161BDFCC6B0000D65C /* Assets.xcassets */,
 				DCA445181BDFCC6B0000D65C /* LaunchScreen.storyboard */,
 				DCA4451B1BDFCC6B0000D65C /* Info.plist */,
 				DCA4450A1BDFCC6B0000D65C /* Supporting Files */,
-				E4E0499A1BE7DF4000D52655 /* ChooseViewController.h */,
-				E4E0499B1BE7DF4000D52655 /* ChooseViewController.m */,
 			);
 			path = SocialIntegration;
 			sourceTree = "<group>";

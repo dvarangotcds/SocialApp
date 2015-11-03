@@ -8,6 +8,6 @@
 
 #import "ViewController.h"
 
-@interface TwitterSocialFViewController : ViewController
+@interface TwitterSocialFViewController : UIViewController
 
 @end
