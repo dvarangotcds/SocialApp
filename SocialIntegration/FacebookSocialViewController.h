@@ -8,6 +8,6 @@
 
 #import "ViewController.h"
 
-@interface FacebookSocialViewController : ViewController
+@interface FacebookSocialViewController : UIViewController
 
 @end

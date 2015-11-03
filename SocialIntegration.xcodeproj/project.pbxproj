@@ -16,7 +16,6 @@
 		AFCAAAB91BE7A795002E9547 /* TKUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFCAAAB81BE7A795002E9547 /* TKUsersViewController.m */; settings = {ASSET_TAGS = (); }; };
 		DCA4450C1BDFCC6B0000D65C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA4450B1BDFCC6B0000D65C /* main.m */; };
 		DCA4450F1BDFCC6B0000D65C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA4450E1BDFCC6B0000D65C /* AppDelegate.m */; };
-		DCA445121BDFCC6B0000D65C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA445111BDFCC6B0000D65C /* ViewController.m */; };
 		DCA445151BDFCC6B0000D65C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA445131BDFCC6B0000D65C /* Main.storyboard */; };
 		DCA445171BDFCC6B0000D65C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCA445161BDFCC6B0000D65C /* Assets.xcassets */; };
 		DCA4451A1BDFCC6B0000D65C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCA445181BDFCC6B0000D65C /* LaunchScreen.storyboard */; };
@@ -25,6 +24,10 @@
 		DCA4452A1BDFF8010000D65C /* FriendTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA445281BDFF8010000D65C /* FriendTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		DCA4452B1BDFF8010000D65C /* FriendTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DCA445291BDFF8010000D65C /* FriendTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
 		DCA445331BE164BE0000D65C /* FacebookSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCA445321BE164BE0000D65C /* FacebookSocialViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E4E049911BE7D8D400D52655 /* PostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0498E1BE7D8D400D52655 /* PostViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E4E049921BE7D8D400D52655 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E049901BE7D8D400D52655 /* ProfileViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E4E049951BE7DA2800D52655 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E049941BE7DA2800D52655 /* ViewController.m */; settings = {ASSET_TAGS = (); }; };
+		E4E0499C1BE7DF4000D52655 /* ChooseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E0499B1BE7DF4000D52655 /* ChooseViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,8 +49,6 @@
 		DCA4450B1BDFCC6B0000D65C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCA4450D1BDFCC6B0000D65C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DCA4450E1BDFCC6B0000D65C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DCA445101BDFCC6B0000D65C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DCA445111BDFCC6B0000D65C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DCA445141BDFCC6B0000D65C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DCA445161BDFCC6B0000D65C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DCA445191BDFCC6B0000D65C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -60,6 +61,14 @@
 		DCA445291BDFF8010000D65C /* FriendTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FriendTableViewCell.xib; path = Cells/FriendTableViewCell.xib; sourceTree = "<group>"; };
 		DCA445311BE164BE0000D65C /* FacebookSocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FacebookSocialViewController.h; sourceTree = "<group>"; };
 		DCA445321BE164BE0000D65C /* FacebookSocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FacebookSocialViewController.m; sourceTree = "<group>"; };
+		E4E0498D1BE7D8D400D52655 /* PostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostViewController.h; sourceTree = "<group>"; };
+		E4E0498E1BE7D8D400D52655 /* PostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostViewController.m; sourceTree = "<group>"; };
+		E4E0498F1BE7D8D400D52655 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		E4E049901BE7D8D400D52655 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		E4E049931BE7DA2800D52655 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		E4E049941BE7DA2800D52655 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E4E0499A1BE7DF4000D52655 /* ChooseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChooseViewController.h; sourceTree = "<group>"; };
+		E4E0499B1BE7DF4000D52655 /* ChooseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChooseViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,13 +132,14 @@
 		DCA445091BDFCC6B0000D65C /* SocialIntegration */ = {
 			isa = PBXGroup;
 			children = (
+				E4E049961BE7DA2E00D52655 /* FacebookSDK */,
 				AF9BF5681BE267760069A62E /* Twitter Kit */,
 				DCA4452C1BDFF8070000D65C /* Cells */,
 				DCA445231BDFCE2F0000D65C /* Social Framework */,
 				DCA4450D1BDFCC6B0000D65C /* AppDelegate.h */,
 				DCA4450E1BDFCC6B0000D65C /* AppDelegate.m */,
-				DCA445101BDFCC6B0000D65C /* ViewController.h */,
-				DCA445111BDFCC6B0000D65C /* ViewController.m */,
+				E4E0499A1BE7DF4000D52655 /* ChooseViewController.h */,
+				E4E0499B1BE7DF4000D52655 /* ChooseViewController.m */,
 				DCA445131BDFCC6B0000D65C /* Main.storyboard */,
 				DCA445161BDFCC6B0000D65C /* Assets.xcassets */,
 				DCA445181BDFCC6B0000D65C /* LaunchScreen.storyboard */,
@@ -166,6 +176,19 @@
 				DCA445291BDFF8010000D65C /* FriendTableViewCell.xib */,
 			);
 			name = Cells;
+			sourceTree = "<group>";
+		};
+		E4E049961BE7DA2E00D52655 /* FacebookSDK */ = {
+			isa = PBXGroup;
+			children = (
+				E4E049931BE7DA2800D52655 /* ViewController.h */,
+				E4E049941BE7DA2800D52655 /* ViewController.m */,
+				E4E0498D1BE7D8D400D52655 /* PostViewController.h */,
+				E4E0498E1BE7D8D400D52655 /* PostViewController.m */,
+				E4E0498F1BE7D8D400D52655 /* ProfileViewController.h */,
+				E4E049901BE7D8D400D52655 /* ProfileViewController.m */,
+			);
+			name = FacebookSDK;
 			sourceTree = "<group>";
 		};
 		FEEF304E95A4F02C755AD6A1 /* Pods */ = {
@@ -298,14 +321,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4E0499C1BE7DF4000D52655 /* ChooseViewController.m in Sources */,
 				AF2A93E81BE3FFA800DA3810 /* TKTimelineViewController.m in Sources */,
-				DCA445121BDFCC6B0000D65C /* ViewController.m in Sources */,
 				DCA4450F1BDFCC6B0000D65C /* AppDelegate.m in Sources */,
 				AFCAAAB91BE7A795002E9547 /* TKUsersViewController.m in Sources */,
 				DCA4450C1BDFCC6B0000D65C /* main.m in Sources */,
 				AF9BF56B1BE267870069A62E /* TwitterKitViewController.m in Sources */,
 				DCA445331BE164BE0000D65C /* FacebookSocialViewController.m in Sources */,
+				E4E049951BE7DA2800D52655 /* ViewController.m in Sources */,
 				DCA4452A1BDFF8010000D65C /* FriendTableViewCell.m in Sources */,
+				E4E049911BE7D8D400D52655 /* PostViewController.m in Sources */,
+				E4E049921BE7D8D400D52655 /* ProfileViewController.m in Sources */,
 				AF9BF5701BE2A06C0069A62E /* TKFriendsTableViewController.m in Sources */,
 				AFCAAAB31BE7A573002E9547 /* TKTweetsViewController.m in Sources */,
 				DCA445261BDFE9000000D65C /* TwitterSocialFViewController.m in Sources */,

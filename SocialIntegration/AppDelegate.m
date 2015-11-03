@@ -11,6 +11,7 @@
 //To use Twitter Kit we need to import this
 #import <Fabric/Fabric.h>
 #import <TwitterKit/TwitterKit.h>
+#import <FBSDKCoreKit/FBSDKCoreKit.h>
 
 @interface AppDelegate ()
 
@@ -25,7 +26,20 @@
     //To use TwitterKit we need to initialize Fabric with Twitter.
     //If you also want to use Crashlytics or other Fabric frameworks just import and add to this array
     [Fabric with:@[[Twitter class]]];
+    
+    //facebook sdk
+    [[FBSDKApplicationDelegate sharedInstance] application:application
+                             didFinishLaunchingWithOptions:launchOptions];
+    
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    return [[FBSDKApplicationDelegate sharedInstance] application:application
+                                                          openURL:url
+                                                sourceApplication:sourceApplication
+                                                       annotation:annotation
+            ];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
