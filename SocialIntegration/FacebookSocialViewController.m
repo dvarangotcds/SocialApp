@@ -127,7 +127,7 @@
     ACAccountType *accountTypeFacebook = [accountStore accountTypeWithAccountTypeIdentifier:
                                           ACAccountTypeIdentifierFacebook];
     
-    NSDictionary *options = [[NSDictionary alloc] initWithObjectsAndKeys:@"156023071416050", (NSString *)ACFacebookAppIdKey, [NSArray arrayWithObjects:@"email", @"user_friends", nil], (NSString *)ACFacebookPermissionsKey, ACFacebookAudienceEveryone, (NSString *)ACFacebookAudienceKey, nil];
+    NSDictionary *options = [[NSDictionary alloc] initWithObjectsAndKeys:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"FacebookAppID"], (NSString *)ACFacebookAppIdKey, [NSArray arrayWithObjects:@"email", @"user_friends", nil], (NSString *)ACFacebookPermissionsKey, ACFacebookAudienceEveryone, (NSString *)ACFacebookAudienceKey, nil];
     
     [accountStore requestAccessToAccountsWithType:accountTypeFacebook
                                           options:options
@@ -143,7 +143,7 @@
     ACAccountType *accountTypeFacebook = [accountStore accountTypeWithAccountTypeIdentifier:
                                           ACAccountTypeIdentifierFacebook];
     
-    NSDictionary *options = [[NSDictionary alloc] initWithObjectsAndKeys:@"156023071416050", (NSString *)ACFacebookAppIdKey, [NSArray arrayWithObjects:@"publish_actions",nil], (NSString *)ACFacebookPermissionsKey, ACFacebookAudienceEveryone, (NSString *)ACFacebookAudienceKey, nil];
+    NSDictionary *options = [[NSDictionary alloc] initWithObjectsAndKeys:[[NSBundle mainBundle] objectForInfoDictionaryKey:@"FacebookAppID"], (NSString *)ACFacebookAppIdKey, [NSArray arrayWithObjects:@"publish_actions",nil], (NSString *)ACFacebookPermissionsKey, ACFacebookAudienceEveryone, (NSString *)ACFacebookAudienceKey, nil];
     
     [accountStore requestAccessToAccountsWithType:accountTypeFacebook
                                           options:options
@@ -153,6 +153,9 @@
      }];
 }
 
+// - A user access token with user_friends permission is required to view the current person's friends.
+// - This will only return any friends who have used (via Facebook Login) the app making the request.
+// - If a friend of the person declines the user_friends permission, that friend will not show up in the friend list for this person.
 - (void)loadFacebookFriendsWithCompletionBlock:(void(^)(bool friendsLoaded, NSError *error))completionBlock
 {
     ACAccountStore *accountStore = [[ACAccountStore alloc] init];
