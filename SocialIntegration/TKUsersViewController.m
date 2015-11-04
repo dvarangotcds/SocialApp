@@ -9,6 +9,7 @@
 #import "TKUsersViewController.h"
 #import <TwitterKit/TwitterKit.h>
 #import "TKFriendsTableViewController.h"
+#import "TKTweetsTableViewController.h"
 
 @interface TKUsersViewController ()
 
@@ -44,6 +45,12 @@
 {
     [self loadFriendsForUserId:self.userIdTextField.text];
 }
+
+- (IBAction)showTweetsAction:(id)sender
+{
+    [self loadTweetsForUserId:self.userIdTextField.text];
+}
+
 
 
 // Given a twitter userID loads a TWTRUser and displays its information
@@ -99,6 +106,48 @@
                 TKFriendsTableViewController *friendsViewController = [[TKFriendsTableViewController alloc] initWithFriends:friends];
                 [self.navigationController pushViewController:friendsViewController animated:YES];
 
+            } else {
+                NSLog(@"Error: %@", connectionError);
+            }
+        }];
+    }
+    else {
+        NSLog(@"Error: %@", clientError);
+    }
+}
+
+- (void)loadTweetsForUserId:(NSString *)userId
+{
+    if (!userId) {
+        UIAlertController *alertNoUserId = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                               message:@"No user ID"
+                                                                        preferredStyle:UIAlertControllerStyleAlert];
+        
+        [self presentViewController:alertNoUserId animated:YES completion:^{
+            [self dismissViewControllerAnimated:YES completion:nil];
+        }];
+    }
+    
+    TWTRAPIClient *client = [[TWTRAPIClient alloc] init];
+    NSString *statusesShowEndpoint = @"https://api.twitter.com/1.1/statuses/user_timeline.json";
+    NSDictionary *params = @{@"id" : userId};
+    NSError *clientError;
+    
+    NSURLRequest *request = [client URLRequestWithMethod:@"GET" URL:statusesShowEndpoint parameters:params error:&clientError];
+    
+    if (request) {
+        [client sendTwitterRequest:request completion:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+            if (data) {
+                // handle the response data e.g.
+                NSError *jsonError;
+                NSArray *tweetsJSONArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
+                
+                NSArray *tweets = [TWTRTweet tweetsWithJSONArray:tweetsJSONArray];
+                
+                TKTweetsTableViewController *tweetsTableVC = [[TKTweetsTableViewController alloc] initWithTweets:tweets];
+                
+                [self showViewController:tweetsTableVC sender:nil];
+                
             } else {
                 NSLog(@"Error: %@", connectionError);
             }
