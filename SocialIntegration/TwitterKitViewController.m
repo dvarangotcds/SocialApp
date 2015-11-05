@@ -20,11 +20,6 @@
 
 @implementation TwitterKitViewController
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-}
-
 #pragma mark - UI Actions
 
 // Reference: https://docs.fabric.io/ios/twitter/authentication.html#log-in-button

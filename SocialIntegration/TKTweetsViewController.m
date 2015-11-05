@@ -76,6 +76,8 @@
     
 }
 
+#pragma mark - Private methods
+
 // This method receives the tweet id and makes the API call to get a TWTRTweet object that represents the tweet.
 // Then it displays the tweet in a previously created TWTRTweetView
 // You also have the tweet info in the TWTRTweet object
@@ -99,14 +101,6 @@
     [client loadTweetsWithIDs:tweetIDs completion:^(NSArray *tweets, NSError *error) {
         NSLog(@"Tweets %@, Error: %@", tweets, error);
     }];
-}
-
-// This is an example of a manually created request to the API.
-// More on creating requests: https://docs.fabric.io/ios/twitter/access-rest-api.html#constructing-a-twitter-request-manually
-// Twitter REST API reference: https://dev.twitter.com/rest/public
-- (IBAction)showFriendsAction:(id)sender
-{
-
 }
 
 #pragma mark - Navigation

@@ -13,6 +13,7 @@
 #import <Social/SLComposeViewController.h>
 #import <Social/SLRequest.h>
 #import "FriendTableViewCell.h"
+#import "TweetsTableViewController.h"
 
 @interface TwitterSocialFViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -103,6 +104,49 @@
         [self presentViewController:vc animated:YES completion:nil];
         
     } 
+}
+
+- (IBAction)showTweetsAction:(id)sender
+{
+    ACAccount *twitterAccount = self.selectedAccount;
+    
+    if (twitterAccount) {
+        
+        NSURL *requestURL = [NSURL URLWithString:@"https://api.twitter.com/1.1/statuses/user_timeline.json"];
+        NSDictionary *param = @{@"id" : @""};
+        
+        SLRequest *request = [SLRequest requestForServiceType:SLServiceTypeTwitter
+                                                requestMethod:SLRequestMethodGET
+                                                          URL:requestURL
+                                                   parameters:param];
+
+        [request setAccount:twitterAccount];
+        
+        __weak TwitterSocialFViewController *wself = self;
+        
+        [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error)
+         {
+             NSLog(@"Twitter HTTP response: %li", (long)[urlResponse statusCode]);
+             
+             if ([urlResponse statusCode] == 200) {
+                 if (responseData) {
+                     // handle the response data e.g.
+                     NSError *jsonError;
+                     NSArray *tweetsJSONArray = [NSJSONSerialization JSONObjectWithData:responseData options:0 error:&jsonError];
+                     TweetsTableViewController *tweetsTableVC = [[TweetsTableViewController alloc] initWithTweets:tweetsJSONArray];
+                     
+                     dispatch_sync(dispatch_get_main_queue(), ^(void){
+                         [wself showViewController:tweetsTableVC sender:nil];
+                     });
+                     
+                 } else {
+                     NSLog(@"Error: %@", error);
+                 }
+
+             }
+         }];
+    }
+   
 }
 
 #pragma mark - UITableViewDataSource methods
@@ -212,7 +256,5 @@
                                             userInfo:nil]);
     }
 }
-
-
 
 @end

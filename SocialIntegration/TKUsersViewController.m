@@ -51,7 +51,7 @@
     [self loadTweetsForUserId:self.userIdTextField.text];
 }
 
-
+#pragma mark - Private methods
 
 // Given a twitter userID loads a TWTRUser and displays its information
 // TWTRUser reference: https://dev.twitter.com/twitter-kit/ios-reference/twtruser
@@ -104,6 +104,7 @@
                 NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
                 NSArray *friends = json[@"users"];
                 TKFriendsTableViewController *friendsViewController = [[TKFriendsTableViewController alloc] initWithFriends:friends];
+
                 [self.navigationController pushViewController:friendsViewController animated:YES];
 
             } else {
@@ -116,16 +117,22 @@
     }
 }
 
+// This is just another manually created request.
+// Given a userID we get the list of tweets in JSON format.
+// We create an array of TWTRTweet objects with it and show in a table.
+// Reference: https://docs.fabric.io/ios/twitter/show-tweets.html#using-static-json-for-tweets
 - (void)loadTweetsForUserId:(NSString *)userId
 {
-    if (!userId) {
+    if (!userId || [userId isEqualToString:@""]) {
         UIAlertController *alertNoUserId = [UIAlertController alertControllerWithTitle:@"Error"
                                                                                message:@"No user ID"
                                                                         preferredStyle:UIAlertControllerStyleAlert];
         
-        [self presentViewController:alertNoUserId animated:YES completion:^{
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }];
+        UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"Ok" style:UIAlertActionStyleCancel handler:nil];
+        [alertNoUserId addAction:okAction];
+        [self presentViewController:alertNoUserId animated:YES completion:nil];
+        
+        return;
     }
     
     TWTRAPIClient *client = [[TWTRAPIClient alloc] init];

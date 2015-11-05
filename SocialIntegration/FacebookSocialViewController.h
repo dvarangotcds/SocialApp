@@ -6,7 +6,7 @@
 //  Copyright © 2015 Diego Varangot. All rights reserved.
 //
 
-#import "ViewController.h"
+#import <UIKit/UIKit.h>
 
 @interface FacebookSocialViewController : UIViewController
 

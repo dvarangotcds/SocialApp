@@ -12,6 +12,7 @@
 #import <FBSDKShareKit/FBSDKShareKit.h>
 
 @interface PostViewController : UIViewController
+
 @property (weak, nonatomic) IBOutlet UITextView *textPost;
 
 @end

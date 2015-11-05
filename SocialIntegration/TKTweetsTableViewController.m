@@ -8,8 +8,10 @@
 
 #import "TKTweetsTableViewController.h"
 #import <TwitterKit/TwitterKit.h>
+#import "TweetTableViewCell.h"
 
-static NSString * const TweetTableReuseIdentifier = @"TweetCell";
+static NSString * const TwitterKitCellReuseIdentifier = @"TwitterKitCell";
+static NSString * const TweetTableViewCellReuseIdentifier = @"TweetCell";
 
 @interface TKTweetsTableViewController () <TWTRTweetViewDelegate>
 
@@ -19,6 +21,7 @@ static NSString * const TweetTableReuseIdentifier = @"TweetCell";
 
 @implementation TKTweetsTableViewController
 
+// Reference: https://docs.fabric.io/ios/twitter/show-timelines.html#custom-tableview-of-static-tweets
 - (TKTweetsTableViewController *)initWithTweets:(NSArray *)tweets
 {
     self = [super init];
@@ -30,7 +33,6 @@ static NSString * const TweetTableReuseIdentifier = @"TweetCell";
     return self;
 }
 
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -39,8 +41,7 @@ static NSString * const TweetTableReuseIdentifier = @"TweetCell";
     self.tableView.estimatedRowHeight = 150;
     self.tableView.rowHeight = UITableViewAutomaticDimension; // Explicitly set on iOS 8 if using automatic row height calculation
     self.tableView.allowsSelection = NO;
-    [self.tableView registerClass:[TWTRTweetTableViewCell class] forCellReuseIdentifier:TweetTableReuseIdentifier];
-
+    [self.tableView registerClass:[TWTRTweetTableViewCell class] forCellReuseIdentifier:TwitterKitCellReuseIdentifier];
     
 }
 
@@ -57,7 +58,7 @@ static NSString * const TweetTableReuseIdentifier = @"TweetCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TWTRTweet *tweet = self.tweetsArray[indexPath.row];
     
-    TWTRTweetTableViewCell *cell = (TWTRTweetTableViewCell *)[tableView dequeueReusableCellWithIdentifier:TweetTableReuseIdentifier forIndexPath:indexPath];
+    TWTRTweetTableViewCell *cell = (TWTRTweetTableViewCell *)[tableView dequeueReusableCellWithIdentifier:TwitterKitCellReuseIdentifier forIndexPath:indexPath];
     [cell configureWithTweet:tweet];
     cell.tweetView.delegate = self;
     

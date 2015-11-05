@@ -14,14 +14,19 @@
 
 @implementation PostViewController
 
-- (void)viewDidLoad {
+// You need publish_actions permission to post a status on facebook.
+// This requires App review by Facebook. If not reviewed, only the app developers (https://developers.facebook.com/apps/-app-id-/roles/) will be able to post
+// https://developers.facebook.com/docs/facebook-login/permissions/v2.5#reference-publish_actions
+
+- (void)viewDidLoad
+{
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    if ([[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
-        // TODO: publish content.
-    } else {
+    
+    // Now we need publish_actions permissions to post.
+    if (![[FBSDKAccessToken currentAccessToken] hasGranted:@"publish_actions"]) {
         FBSDKLoginManager *loginManager = [[FBSDKLoginManager alloc] init];
         [loginManager logInWithPublishPermissions:@[@"publish_actions"]
+                               fromViewController:self
                                           handler:^(FBSDKLoginManagerLoginResult *result, NSError *error) {
                                               NSLog(@"texto de resultado: %@",result);
                                               NSLog(@"texto de error: %@",error);
@@ -30,16 +35,15 @@
     }
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - UI Actions
+
+- (IBAction)cancelAction:(id)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)cancelAction:(id)sender {
-    [self performSegueWithIdentifier:@"showProfileAgain" sender:self];
-}
-
-- (IBAction)postIt:(id)sender {
+- (IBAction)postIt:(id)sender
+{
     NSString *msg = self.textPost.text;
     NSDictionary *params = @{
                              @"message": msg,
@@ -54,46 +58,35 @@
                                           NSError *error) {
         NSLog(@"%@", result);
         if(!error){
-            UIAlertController * alert=   [UIAlertController
-                                          alertControllerWithTitle:@"Great!"
-                                          message:@"You post that on Facebook!"
-                                          preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Great!"
+                                                                           message:@"You post that on Facebook!"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
             
-            UIAlertAction* ok = [UIAlertAction
-                                 actionWithTitle:@"Ok!"
-                                 style:UIAlertActionStyleDefault
-                                 handler:^(UIAlertAction * action)
-                                 {
-                                     [alert dismissViewControllerAnimated:YES completion:nil];
-                                     [self performSegueWithIdentifier:@"showProfileAgain" sender:self];
-                                 }];
-            
+            UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok!"
+                                                         style:UIAlertActionStyleDefault
+                                                       handler:^(UIAlertAction * action) {
+                                                           [alert dismissViewControllerAnimated:YES completion:nil];
+                                                       }];
             
             [alert addAction:ok];
-            
             [self presentViewController:alert animated:YES completion:nil];
-        }else{
-            UIAlertController * alert=   [UIAlertController
-                                          alertControllerWithTitle:@"Ohhh!"
-                                          message:@"Something just happend! Try posting later!"
-                                          preferredStyle:UIAlertControllerStyleAlert];
             
-            UIAlertAction* ok = [UIAlertAction
-                                 actionWithTitle:@"Ok!"
-                                 style:UIAlertActionStyleDefault
-                                 handler:^(UIAlertAction * action)
-                                 {
-                                     [alert dismissViewControllerAnimated:YES completion:nil];
-                                     [self performSegueWithIdentifier:@"showProfileAgain" sender:self];
-                                 }];
+        } else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Ohhh!"
+                                                                           message:@"Something just happend! Try posting later!"
+                                                                    preferredStyle:UIAlertControllerStyleAlert];
             
+            UIAlertAction *ok = [UIAlertAction actionWithTitle:@"Ok!"
+                                                         style:UIAlertActionStyleDefault
+                                                       handler:^(UIAlertAction * action) {
+                                                           [alert dismissViewControllerAnimated:YES completion:nil];
+                                                           [self performSegueWithIdentifier:@"showProfileAgain" sender:self];
+                                                       }];
             
             [alert addAction:ok];
-            
             [self presentViewController:alert animated:YES completion:nil];
         }
     }];
-
 }
 
 @end
