@@ -20,16 +20,18 @@
 {
     [super viewDidLoad];
     self.loginButton.delegate = self;
+    self.loginButton.loginBehavior = FBSDKLoginBehaviorWeb;
+    
     //for more permissions visit https://developers.facebook.com/docs/facebook-login/permissions/v2.5
     self.loginButton.readPermissions = @[@"public_profile", @"email", @"user_friends", @"user_birthday"];
 
     //to know if the user is already logged in
-    if (![FBSDKAccessToken currentAccessToken]) {
-        
+    if ([FBSDKAccessToken currentAccessToken]) {
+        __weak ProfileViewController *wself = self;
         [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:@{@"fields" : @"email, name, picture.type(large), birthday, friends"}]
          startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
              if (!error) {
-                 [self setInfoWithDictionary:result];
+                 [wself setInfoWithDictionary:result];
              }
          }];
     }
@@ -101,6 +103,7 @@
     }
     
     dialog.shareContent = shareContent;
+    
     [dialog show];
 }
 

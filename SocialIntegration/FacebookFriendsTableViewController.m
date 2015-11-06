@@ -29,8 +29,10 @@
     
     __weak FacebookFriendsTableViewController *wself = self;
     
+    NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:@"id,picture,name", @"fields", nil];
+    
     FBSDKGraphRequest *request = [[FBSDKGraphRequest alloc] initWithGraphPath:@"/me/friends/"
-                                                                   parameters:@{}
+                                                                   parameters:param
                                                                    HTTPMethod:@"GET"];
     [request startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection,
                                           id result,

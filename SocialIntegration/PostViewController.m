@@ -80,7 +80,6 @@
                                                          style:UIAlertActionStyleDefault
                                                        handler:^(UIAlertAction * action) {
                                                            [alert dismissViewControllerAnimated:YES completion:nil];
-                                                           [self performSegueWithIdentifier:@"showProfileAgain" sender:self];
                                                        }];
             
             [alert addAction:ok];

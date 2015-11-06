@@ -216,6 +216,7 @@
         [request setAccount:twitterAccount];
         
         __weak TwitterSocialFViewController *wself = self;
+        [self.twFriends removeAllObjects];
         
         [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error)
          {

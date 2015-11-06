@@ -174,6 +174,7 @@
                                                       URL:requestURL
                                                parameters:param];
     [request setAccount:facebookLoggedAccounts];
+    [self.fbFriends removeAllObjects];
     
     [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error)
      {
